@@ -1,0 +1,27 @@
+{
+  "name": "@stoked-cenv/s3tube",
+  "version": "1.0.0",
+  "description": "youtubeclone mono repo implementation with cenv",
+  "scripts": {
+    "start:frontend": "pnpm -F youtubeclone-frontend start",
+    "start:backend": "pnpm -F youtubeclone-backend start",
+    "start": "./node_modules/.bin/concurrently --kill-others 'pnpm start:frontend' 'pnpm start:backend'"
+  },
+  "keywords": [],
+  "author": "Brian Stoker",
+  "license": "MIT",
+  "devDependencies": {
+    "@stoked-cenv/lib": "^2.0.0-a.99",
+    "@types/node": "18.16.1",
+    "@typescript-eslint/parser": "^5.62.0",
+    "concurrently": "^8.2.0",
+    "prettier": "^2.8.8",
+    "typescript": "4.9.5"
+  },
+  "cli": {
+    "packageManager": "pnpm"
+  },
+  "dependencies": {
+    "cloudinary": "^1.40.0"
+  }
+}

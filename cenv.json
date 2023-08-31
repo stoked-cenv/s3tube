@@ -1,0 +1,41 @@
+{
+  "globalPackage": "internal-globals",
+  "defaultSuite": "default",
+  "primaryPackagePath": "packages",
+  "versionCmd": "cenv -v -s",
+  "suites": {
+    "default": {
+      "packages": [
+        "@stokedconsulting/common-spa",
+        "brianstoker-api",
+        "brianstoker-spa",
+        "@stoked-cenv/cdk+cert@brianstoker",
+        "stokedconsulting-spa",
+        "@stoked-cenv/cdk+cert@stokedconsulting",
+        "@stoked-cenv/cdk+network"
+      ]
+    },
+    "cenv": {
+      "packages": [
+        "@stoked-cenv/ui",
+        "@stoked-cenv/lib",
+        "@stoked-cenv/cli",
+        "@stoked-cenv/cli-select",
+        "@stoked-cenv/cdk"
+      ]
+    },
+    "brianstoker": {
+      "packages": [
+        "brianstoker-api",
+        "brianstoker-spa",
+        "@stoked-cenv/cdk+cert@brianstoker"
+      ]
+    },
+    "stokedconsulting": {
+      "packages": [
+        "stokedconsulting-spa",
+        "@stoked-cenv/cdk+cert@stokedconsulting"
+      ]
+    }
+  }
+}
