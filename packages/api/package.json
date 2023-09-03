@@ -1,5 +1,5 @@
 {
-  "name": "youtubeclone-backend",
+  "name": "@stokedconsulting/s3tube-api",
   "version": "1.0.0",
   "description": "Youtube clone backend using Express + Sequelize",
   "main": "src/server.js",
@@ -21,5 +21,34 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
+  },
+  "deployDependencies": [
+    "@stoked-cenv/cdk+cert@s3tube",
+    "@stoked-cenv/cdk+network"
+  ],
+  "destroyDependencies": [
+    "@stoked-cenv/cdk+cert@s3tube"
+  ],
+  "cenv": {
+    "local": {
+      "cenvVars": {
+        "PORT": 6061
+      }
+    },
+    "stack": {
+      "package": "@stoked-cenv/cdk+api",
+      "assignedSubDomain": "api",
+      "volatileContextKeys": [
+        "vpc-provider:account=CDK_DEFAULT_ACCOUNT:filter.tag:Name=ENV-net:region=CDK_DEFAULT_REGION:returnAsymmetricSubnets=true"
+      ],
+      "certArnName": "LocDashCertificateArn"
+    },
+    "docker": {
+      "context": "../..",
+      "file": "./Dockerfile"
+    }
+  },
+  "cli": {
+    "packageManager": "pnpm"
   }
 }

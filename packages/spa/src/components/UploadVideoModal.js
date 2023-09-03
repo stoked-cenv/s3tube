@@ -149,7 +149,7 @@ const UploadVideoModal = ({ previewVideo, closeModal, url, thumbnail }) => {
       };
 
       const { data: video } = await client(
-        `${process.env.REACT_APP_BE}/videos`,
+        `${process.env.REACT_APP_API_SERVER_URL}/videos`,
         { body: newVideo }
       );
 

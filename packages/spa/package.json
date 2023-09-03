@@ -1,6 +1,6 @@
 {
-  "name": "youtubeclone-frontend",
-  "version": "0.1.0",
+  "name": "@stokedconsulting/s3tube-spa",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
@@ -38,5 +38,31 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "cenv": {
+    "local": {
+      "cenvVars": {
+        "PORT": 4041
+      }
+    },
+    "stack": {
+      "package": "@stoked-cenv/cdk+spa@s3tube",
+      "buildPath": "build"
+    },
+    "lib": {
+      "loadVars": true
+    }
+  },
+  "deployDependencies": [
+    "@stoked-cenv/cdk+cert@s3tube"
+  ],
+  "destroyDependencies": [
+    "@stoked-cenv/cdk+cert@s3tube"
+  ],
+  "preBuildScripts": [
+    "export NODE_OPTIONS=--openssl-legacy-provider"
+  ],
+  "cli": {
+    "packageManager": "pnpm"
   }
 }

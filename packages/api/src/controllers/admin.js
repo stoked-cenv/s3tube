@@ -29,6 +29,6 @@ exports.getVideos = asyncHandler(async (req, res, next) => {
   const videos = await Video.findAll({
     attributes: ["id", "title", "description", "url", "thumbnail", "userId"],
   });
-
+  console.log(JSON.stringify(videos, null, 2));
   res.status(200).json({ success: true, data: videos });
 });

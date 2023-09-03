@@ -1,40 +1,28 @@
 {
-  "globalPackage": "internal-globals",
+  "globalPackage": "@stokedconsulting/s3tube-globals",
   "defaultSuite": "default",
   "primaryPackagePath": "packages",
   "versionCmd": "cenv -v -s",
   "suites": {
     "default": {
       "packages": [
-        "@stokedconsulting/common-spa",
-        "brianstoker-api",
-        "brianstoker-spa",
-        "@stoked-cenv/cdk+cert@brianstoker",
-        "stokedconsulting-spa",
-        "@stoked-cenv/cdk+cert@stokedconsulting",
+        "@stokedconsulting/s3tube-spa",
+        "@stokedconsulting/s3tube-api",
+        "@stoked-cenv/cdk+cert@s3tube",
         "@stoked-cenv/cdk+network"
       ]
     },
-    "cenv": {
+    "spa": {
       "packages": [
-        "@stoked-cenv/ui",
-        "@stoked-cenv/lib",
-        "@stoked-cenv/cli",
-        "@stoked-cenv/cli-select",
-        "@stoked-cenv/cdk"
+        "@stokedconsulting/s3tube-spa",
+        "@stoked-cenv/cdk+cert@s3tube"
       ]
     },
-    "brianstoker": {
+    "api": {
       "packages": [
-        "brianstoker-api",
-        "brianstoker-spa",
-        "@stoked-cenv/cdk+cert@brianstoker"
-      ]
-    },
-    "stokedconsulting": {
-      "packages": [
-        "stokedconsulting-spa",
-        "@stoked-cenv/cdk+cert@stokedconsulting"
+        "@stokedconsulting/s3tube-api",
+        "@stoked-cenv/cdk+cert@s3tube",
+        "@stoked-cenv/cdk+network"
       ]
     }
   }

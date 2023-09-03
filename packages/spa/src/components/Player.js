@@ -25,7 +25,7 @@ const Player = ({ previewUrl }) => {
     }
 
     vjsPlayer.on("ended", () => {
-      client(`${process.env.REACT_APP_BE}/videos/${videoId}/view`);
+      client(`${process.env.REACT_APP_API_SERVER_URL}/videos/${videoId}/view`);
     });
 
     return () => {

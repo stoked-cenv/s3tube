@@ -1,10 +1,10 @@
 {
-  "name": "@stoked-cenv/s3tube",
+  "name": "@stokedconsulting/s3tube",
   "version": "1.0.0",
-  "description": "youtubeclone mono repo implementation with cenv",
+  "description": "S3 Tube is a conversion of YouTube Clone turned into a mono repo implementation with cenv to easily deploy to aws using an S3 bucket",
   "scripts": {
-    "start:frontend": "pnpm -F youtubeclone-frontend start",
-    "start:backend": "pnpm -F youtubeclone-backend start",
+    "start:frontend": "pnpm -F @stokedconsulting/s3tube-spa start",
+    "start:backend": "pnpm -F @stokedconsulting/s3tube-api start",
     "start": "./node_modules/.bin/concurrently --kill-others 'pnpm start:frontend' 'pnpm start:backend'"
   },
   "keywords": [],

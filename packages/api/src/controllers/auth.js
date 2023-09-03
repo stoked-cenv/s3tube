@@ -36,7 +36,7 @@ exports.login = async (req, res, next) => {
   if (!passwordMatch) {
     return next({ message: "The password does not match", statusCode: 400 });
   }
-
+  console.log(JSON.stringify(user, null, 2));
   const payload = { id: user.id };
   const token = jwt.sign(payload, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRE,

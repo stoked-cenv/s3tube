@@ -5,6 +5,7 @@ const auth = require("./routes/auth");
 const admin = require("./routes/admin");
 const video = require("./routes/video");
 const user = require("./routes/user");
+const health = require("./routes/health");
 const errorHandler = require("./middlewares/errorHandler");
 
 const app = express();
@@ -12,10 +13,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/v1/auth", auth);
-app.use("/api/v1/admin", admin);
-app.use("/api/v1/videos", video);
-app.use("/api/v1/users", user);
+app.use("/v1/auth", auth);
+app.use("/v1/admin", admin);
+app.use("/v1/videos", video);
+app.use("/v1/users", user);
+app.use("/v1", health);
 
 app.use(errorHandler);
 

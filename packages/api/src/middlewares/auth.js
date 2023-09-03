@@ -13,7 +13,7 @@ exports.protect = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
+    console.log(JSON.stringify(decoded, null, 2));
     const user = await User.findOne({
       attributes: [
         "id",
@@ -24,11 +24,14 @@ exports.protect = async (req, res, next) => {
         "avatar",
         "cover",
         "channelDescription",
+        "isAdmin"
       ],
       where: {
         id: decoded.id,
       },
     });
+
+    console.log(JSON.stringify(user, null, 2));
 
     req.user = user;
     next();
@@ -42,11 +45,12 @@ exports.protect = async (req, res, next) => {
 
 exports.admin = async (req, res, next) => {
   if (req.user.isAdmin) {
+    delete req.user;
     next();
+  } else {
+    return next({
+      message: "Authorization denied, only admins can visit this route",
+      statusCode: 401,
+    });
   }
-
-  return next({
-    message: "Authorization denied, only admins can visit this route",
-    statusCode: 401,
-  });
 };
